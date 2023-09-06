@@ -1,4 +1,4 @@
-# Python Bigram Analysis with Docker
+# Python Bigram Analysis with Docker :whale2:
 
 This repository contains two implementations of bigram analysis:
 
