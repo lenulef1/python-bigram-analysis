@@ -1,4 +1,4 @@
-# Python Bigram Analysis with Docker
+# Python Bigram Analysis with Docker :whale2:
 
 This repository contains two implementations of bigram analysis:
 
@@ -13,12 +13,7 @@ This repository contains two implementations of bigram analysis:
 An example input file (`input.txt`) has been provided in this repository. You can use it for testing the script.
 Click on a section below to view the relevant instructions.
 
-<details>
-<summary><strong>Python Script</strong></summary>
-
-Follow these steps to run the basic Python script:
-
-### 1. Clone the Repository
+## 1. Clone the Repository
 
 Clone this repository to your local machine:
 
@@ -26,7 +21,7 @@ Clone this repository to your local machine:
 git clone https://github.com/lenulef1/python-bigram-analysis.git
 ```
 
-### 2. Build the Docker Image
+## 2. Navigate to the right dierctory
 
 Navigate to the repository directory:
 
@@ -34,13 +29,18 @@ Navigate to the repository directory:
 cd python-bigram-analysis
 ```
 
+<details>
+<summary><strong>Python Script</strong></summary>
+
+### 3. Build the Docker Image
+
 Build the Docker image:
 
 ```shell
 docker build -t bigram-app .
 ```
 
-### 3. Run the Docker Container
+### 4. Run the Docker Container
 
 Run the Docker container to analyze the example input file (`input.txt`):
 
@@ -48,7 +48,7 @@ Run the Docker container to analyze the example input file (`input.txt`):
 docker run bigram-app
 ```
 
-### 4.  View the Results
+### 5.  View the Results
 
 The script will analyze the example input file and print the top 10 most frequent bigrams to the console.
 
@@ -60,19 +60,7 @@ The script will analyze the example input file and print the top 10 most frequen
 
 This section contains instructions for setting up and interacting with the Flask web API:
 
-### 1. Clone the Repository
-
-```shell
-git clone https://github.com/lenulef1/python-bigram-analysis.git
-```
-
-### 2. Build the Docker Image
-
-Navigate to the repository directory:
-
-```shell
-cd python-bigram-analysis
-```
+### 3. Build the Docker Image
 
 Build the Docker image:
 
@@ -80,7 +68,7 @@ Build the Docker image:
 docker build -t flask-bigram-app -f Dockerfile_flask .
 ```
 
-### 3. Run the Docker Container
+### 4. Run the Docker Container
 
 Run the Docker container and map port 5000:
 
@@ -88,14 +76,17 @@ Run the Docker container and map port 5000:
 docker run -p 5000:5000 flask-bigram-app
 ```
 
-### 4. Interact with the Web API
+<details>
+  <summary><i>Interact with the Web API with POST method</i></summary>
+
+### 5. Interact with the Web API
 
 The Flask web API will be accessible at `http://localhost:5000/upload`. You can use tools like `curl` or Postman to send a POST request with a file to this endpoint:
 
 Using `curl`:
 
 ```shell
-curl -X POST -F "file=@path_to_your_file.txt" http://127.0.0.1:5000/upload
+curl -X POST -F "file=@input.txt" http://127.0.0.1:5000/upload
 ```
 
 Using Postman:
@@ -107,5 +98,28 @@ Using Postman:
 - Send the request.
 
 The response will contain the top 10 most frequent bigrams from the uploaded file in JSON format.
+</details>
+
+<details>
+  <summary><i>Analyze a Wikipedia Article with GET method</i></summary>
+
+### 5. Interact with the Web API
+
+Send a GET request to the endpoint `http://localhost:5000/wikipedia/<article_name>`, replacing `<article_name>` with the name of a Wikipedia article:
+
+Using `curl`:
+
+```shell
+curl http://127.0.0.1:5000/wikipedia/Merck_Group
+```
+
+Using Postman:
+
+- Set the request type to GET.
+- Enter the URL: `http://127.0.0.1:5000/wikipedia/Merck_Group`.
+- Send the request.
+
+The response will contain the top 10 most frequent bigrams from the specified Wikipedia article in JSON format.
+</details>
 
 </details>
