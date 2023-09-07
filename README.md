@@ -13,7 +13,9 @@ This repository contains two implementations of bigram analysis:
 An example input file (`input.txt`) has been provided in this repository. You can use it for testing the script.
 Click on a section below to view the relevant instructions.
 
-## 1. Clone the Repository
+## Steps
+
+### 1. Clone the Repository
 
 Clone this repository to your local machine:
 
@@ -21,7 +23,7 @@ Clone this repository to your local machine:
 git clone https://github.com/lenulef1/python-bigram-analysis.git
 ```
 
-## 2. Navigate to the right dierctory
+### 2. Navigate to the right dierctory
 
 Navigate to the repository directory:
 
@@ -29,7 +31,7 @@ Navigate to the repository directory:
 cd python-bigram-analysis
 ```
 
-<details>
+<details open>
 <summary><strong>Python Script</strong></summary>
 
 ### 3. Build the Docker Image
@@ -54,7 +56,7 @@ The script will analyze the example input file and print the top 10 most frequen
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Flask Web API</strong></summary>
 <br>
 
@@ -76,7 +78,7 @@ Run the Docker container and map port 5000:
 docker run -p 5000:5000 flask-bigram-app
 ```
 
-<details>
+<details open>
   <summary><i>Interact with the Web API with POST method</i></summary>
 
 ### 5. Interact with the Web API
@@ -100,7 +102,7 @@ Using Postman:
 The response will contain the top 10 most frequent bigrams from the uploaded file in JSON format.
 </details>
 
-<details>
+<details open>
   <summary><i>Analyze a Wikipedia Article with GET method</i></summary>
 
 ### 5. Interact with the Web API
